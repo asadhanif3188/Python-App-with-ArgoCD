@@ -1,0 +1,15 @@
+argo-cd:
+  global:
+    domain: argocd.test.com
+  configs:
+    params:
+      server.insecure: true
+  server:
+    ingress:
+      enabled: true
+      annotations:
+        # cert-manager.io/cluster-issuer: letsencrypt-prod-cluster
+        # appgw.ingress.kubernetes.io/ssl-redirect: "true"    
+        # appgw.ingress.kubernetes.io/backend-protocol: "http"
+      # ingressClassName: "azure-application-gateway"
+      # tls: true
