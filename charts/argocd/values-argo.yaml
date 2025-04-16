@@ -1,15 +1,34 @@
 argo-cd:
+  redis-ha:
+    enabled: false
+
+  controller:
+    replicas: 1
+
+  server:
+    replicas: 1
+
+  repoServer:
+    replicas: 1
+
+  applicationSet:
+    replicas: 1
   global:
     domain: argocd.test.com
   configs:
     params:
       server.insecure: true
+  certificate:
+    enabled: true
+
+
   server:
     ingress:
       enabled: true
       annotations:
+        nginx.ingress.kubernetes.io/backend-protocol: "HTTPS"
         # cert-manager.io/cluster-issuer: letsencrypt-prod-cluster
         # appgw.ingress.kubernetes.io/ssl-redirect: "true"    
         # appgw.ingress.kubernetes.io/backend-protocol: "http"
-      # ingressClassName: "azure-application-gateway"
-      # tls: true
+      ingressClassName: "nginx"
+      tls: true
