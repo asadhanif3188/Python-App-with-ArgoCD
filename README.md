@@ -13,3 +13,6 @@ To deploy the ArgoCD with helm, we need to run following command to get the depe
 helm dependency build charts/argocd
 ```
 
+```
+helm install my-argocd charts\argocd --values charts\argocd\values-argo.yaml --namespace argocd --create-namespace
+```
