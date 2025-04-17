@@ -1,9 +1,9 @@
 # Python-App-with-ArgoCD
 
 Endpoints will be available at:
-- GET `http://localhost:5000/health`
-- GET `http://localhost:5000/info`
-- GET `http://localhost:5000/time`
+- GET `python-app.test.com/health`
+- GET `python-app.test.com/info`
+- GET `python-app.test.com/time`
 
 
 ## ArgoCD Deployment 
@@ -64,6 +64,5 @@ kubectl get secrets argocd-initial-admin-secret -n argocd -o yaml
 ```
 echo <encoded-password> | base64 -d
 ```
-
 
 
