@@ -35,3 +35,35 @@ To see the pods of ArgoCD.
 kubectl get po -n argocd
 ```
 
+### Get the admin password of the ArgoCD app
+
+See the list of secrets
+
+```
+kubectl get secrets -n argocd
+```
+
+Output:
+```
+NAME                              TYPE                 DATA   AGE
+argocd-initial-admin-secret       Opaque               1      101m
+argocd-notifications-secret       Opaque               0      4m28s
+argocd-redis                      Opaque               1      101m
+argocd-secret                     Opaque               3      4m28s
+sh.helm.release.v1.my-argocd.v1   helm.sh/release.v1   1      4m32s
+```
+
+We are interested in the secret `argocd-initial-admin-secret` because it contains admin password. 
+
+*Step A:*
+```
+kubectl get secrets argocd-initial-admin-secret -n argocd -o yaml
+```
+
+*Step B:*
+```
+echo <encoded-password> | base64 -d
+```
+
+
+
