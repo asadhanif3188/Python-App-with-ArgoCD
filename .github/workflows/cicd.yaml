@@ -22,5 +22,5 @@ jobs:
         with:
           push: true
           # tags: asadhanif3188/python-with-argocd:${{ env.COMMIT_ID }}
-          tags: asadhanif3188/python-with-argocd:${{ GITHUB_SHA::6 }}
+          tags: asadhanif3188/python-with-argocd:${{ github.sha.substr(0, 6) }}
 

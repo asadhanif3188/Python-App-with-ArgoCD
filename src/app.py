@@ -36,7 +36,7 @@ class Details(Resource):
             'app_name': 'Python App with ArgoCD',
             'developer': 'Asad Hanif',
             'serving_from': 'Kubernetes',
-            'test': 'a1',
+            'test': 'a12',
         }
 
 api.add_resource(HealthCheck, '/health')
