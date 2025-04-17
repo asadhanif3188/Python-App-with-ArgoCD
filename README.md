@@ -7,12 +7,31 @@ Endpoints will be available at:
 
 
 ## ArgoCD Deployment 
-To deploy the ArgoCD with helm, we need to run following command to get the dependencies.
+To deploy the ArgoCD with helm, we need to run following command to get the dependencies for our chart.
 
 ```
 helm dependency build charts/argocd
 ```
 
+Now install our ArgoCD helm chart to execute the ArgoCD App. 
+
 ```
 helm install my-argocd charts\argocd --values charts\argocd\values-argo.yaml --namespace argocd --create-namespace
 ```
+
+To apply the updated helm chart.
+```
+helm upgrade my-argocd charts\argocd --values charts\argocd\values-argo.yaml --namespace argocd 
+```
+
+To unintall helm chart 
+```
+helm uninstall my-argocd  --namespace argocd
+```
+
+To see the pods of ArgoCD.
+
+```
+kubectl get po -n argocd
+```
+
