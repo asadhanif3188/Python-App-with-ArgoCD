@@ -30,10 +30,18 @@ class CurrentTime(Resource):
             'utc_time': datetime.datetime.now(datetime.timezone.utc).astimezone().isoformat(),
             'local_time': datetime.datetime.now().astimezone().isoformat()
         }
+class Details(Resource):
+    def get(self):
+        return {
+            'app_name': 'Python App with ArgoCD',
+            'developer': 'Asad Hanif',
+            'serving_from': 'Kubernetes',
+        }
 
 api.add_resource(HealthCheck, '/health')
 api.add_resource(ServerInfo, '/info')
 api.add_resource(CurrentTime, '/time')
+api.add_resource(Details, '/api/v1/details')
 
 if __name__ == '__main__':
     port = int(os.environ.get('PORT', 5000))
