@@ -37,7 +37,7 @@ class Details(Resource):
             'developer': 'Asad Hanif',
             'serving_from': 'Kubernetes',
             'team_members': 'Haroon, Saqib',
-            'other_members': 'Salman, Hamza',
+            'other_members': 'Salman, Hamza, Safo',
         }
 
 api.add_resource(HealthCheck, '/health')
