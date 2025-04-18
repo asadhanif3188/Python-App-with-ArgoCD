@@ -109,6 +109,11 @@ helm upgrade --install --namespace actions-runner-system --create-namespace\
 
 **note:-** Replace REPLACE_YOUR_TOKEN_HERE with your PAT that was generated previously.
 
+Verifly runner Pods are up and running.
+
+```
+kubectl get pod -n actions-runner-system
+```
 
 ### Step 4: Create the GitHub self hosted runners and configure to run against your repository.
 
@@ -130,7 +135,25 @@ spec:
 
 Apply this file to your K8s cluster.
 ```
-kubectl apply -f runnerdeployment.yaml
+kubectl apply -f runnerdeployment.yaml -n actions-runner-system
+```
+
+Important:
+
+We can performing above steps using followinv manifest.
+
+```
+cat << EOF | kubectl apply -n actions-runner-system -f -
+apiVersion: actions.summerwind.dev/v1alpha1
+kind: RunnerDeployment
+metadata:
+  name: self-hosted-runner
+spec:
+  replicas: 1
+  template:
+    spec:
+      repository: asadhanif3188/Python-App-with-ArgoCD
+EOF
 ```
 
 ### Step 5: Verify that your setup is successful:
