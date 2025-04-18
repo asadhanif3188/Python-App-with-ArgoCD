@@ -8,7 +8,7 @@ image:
   repository: asadhanif3188/python-with-argocd
   pullPolicy: IfNotPresent
   # Overrides the image tag whose default is the chart appVersion.
-  tag: "v1.0.1"
+  tag: "e7f137"
 
 imagePullSecrets: []
 nameOverride: ""
