@@ -13,23 +13,21 @@ argo-cd:
 
   applicationSet:
     replicas: 1
-  global:
-    domain: argocd.test.com
-  configs:
-    params:
-      server.insecure: true
+
+  # configs:
+  #   params:
+  #     server.insecure: true
+
   certificate:
     enabled: true
 
+  global:
+    domain: argocd.test.com
 
   server:
     ingress:
       enabled: true
       annotations:
-        # nginx.ingress.kubernetes.io/backend-protocol: "HTTPS"
-        nginx.ingress.kubernetes.io/backend-protocol: "HTTP"
-        # cert-manager.io/cluster-issuer: letsencrypt-prod-cluster
-        # appgw.ingress.kubernetes.io/ssl-redirect: "true"    
-        # appgw.ingress.kubernetes.io/backend-protocol: "http"
+        nginx.ingress.kubernetes.io/backend-protocol: "HTTPS"
       ingressClassName: "nginx"
-      tls: false
+      tls: true
