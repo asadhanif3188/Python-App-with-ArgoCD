@@ -61,7 +61,7 @@ jobs:
       - name: Argocd app sync
         shell: bash
         run: |
-          argocd login my-argocd-server.argocd \
+          argocd login my-argocd-server.argocd:80 \
             --insecure  \
             --grpc-web \
             --username admin \
