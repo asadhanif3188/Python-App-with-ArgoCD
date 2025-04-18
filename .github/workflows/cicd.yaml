@@ -31,6 +31,7 @@ jobs:
       commit_id: ${{ env.COMMIT_ID }}
 
   cd:
+    name: Deploy Application using ArgoCD
     needs: ci
     runs-on: self-hosted
     steps:
@@ -49,8 +50,6 @@ jobs:
         uses: EndBug/add-and-commit@v9
         with:
           message: 'Updates values.yaml with commit ${{needs.ci.outputs.commit_id}}'
-          token: ${{ secrets.GITHUB_TOKEN }}
-
 
       - name: Install argocd
         shell: bash
