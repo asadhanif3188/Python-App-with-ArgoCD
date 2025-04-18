@@ -2,7 +2,7 @@ replicaCount: 1
 image:
   repository: asadhanif3188/python-with-argocd
   pullPolicy: IfNotPresent
-  tag: "0310ba"
+  tag: "832d6a"
 imagePullSecrets: []
 nameOverride: ""
 fullnameOverride: ""
