@@ -5,7 +5,7 @@ metadata:
   description: An example of a basic Python application.
   annotations:
     github.com/project-slug: asadhanif3188/Python-App-with-ArgoCD
-  #   backstage.io/techdocs-ref: dir:.
+    backstage.io/techdocs-ref: dir:.
 spec:
   type: service
   owner: development

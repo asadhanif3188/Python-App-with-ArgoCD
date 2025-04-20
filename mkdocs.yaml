@@ -1,0 +1,15 @@
+site_name: 'Python-App'
+site_description: 'Main documentation for python app.'
+repo_url: https://github.com/asadhanif3188/Python-App-with-ArgoCD
+edit_uri: edit/main/docs
+
+plugins:
+  - techdocs-core
+  # - redirects:
+  #     redirect_maps:
+  #       'index.md': 'overview/what-is-backstage.md'
+
+# For sidebar navigation on https://backstage.io/, see `microsite/sidebars.js`
+nav:
+  - Overview:
+      - Getting Started: 'docs/index.md'
